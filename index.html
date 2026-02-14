@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Will you be my Valentine? 💖&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(145deg, #ffdde1 0%, #f9c9e2 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>touch-action: manipulation; /* improves tapping on mobile */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* main card */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.valentine-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-backdrop-filter: blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 48px 48px 32px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 30px 40px rgba(220, 20, 60, 0.15),</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>0 0 0 2px rgba(255, 255, 255, 0.5) inset;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 380px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px 20px 40px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,240,0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b63e5e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 3px 6px #ffe2ec;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: softPulse 2s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* question */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a1224b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0 28px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ffb6c190;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 0 #d46b8d30;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* yes / no button container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.button-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: row;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px 0 15px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 0 #c05a7b, 0 8px 20px #f598b2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #c12858;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.1s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>touch-action: none; <span class="Apple-converted-space">  </span>/* helps avoid accidental page drag */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #ffeef4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 130px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-tap-highlight-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn:active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(6px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 0 #b04468, 0 10px 20px #f28baa;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* moving "no" button extra style */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#noBtn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f9e2ec;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #9f3e5c;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 12px 0 #b45b7a, 0 8px 20px #d987a3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: left 0.08s ease, top 0.08s ease, right 0.08s ease, transform 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>will-change: left, top;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 25;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>touch-action: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* message after yes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden-message {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 220, 240, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #aa2350;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px dashed #ff9eb5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.3s ease, transform 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px #ffb0c3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-break: break-word;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden-message.show {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden-message i {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: heartFloat 1.5s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* balloon hearts moving around */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: drop-shadow(0 8px 12px #eea5b6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;<span class="Apple-converted-space">  </span>/* so clicks pass through to buttons */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: floatAround 14s infinite alternate ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>will-change: transform, left, top;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* different delays and sizes */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(1) { top: 5%; left: 3%; font-size: 2.8rem; animation-duration: 16s; animation-delay: -2s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(2) { top: 15%; right: 2%; font-size: 3.5rem; animation-duration: 19s; animation-delay: -5s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(3) { bottom: 12%; left: 8%; font-size: 2.4rem; animation-duration: 13s; animation-delay: -1s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(4) { top: 25%; left: 20%; font-size: 4rem; animation-duration: 22s; animation-delay: -11s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(5) { bottom: 25%; right: 10%; font-size: 3rem; animation-duration: 17s; animation-delay: -7s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(6) { top: 70%; left: 15%; font-size: 2.2rem; animation-duration: 20s; animation-delay: -3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(7) { bottom: 40%; right: 5%; font-size: 3.8rem; animation-duration: 15s; animation-delay: -9s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.heart-balloon:nth-child(8) { top: 85%; left: 70%; font-size: 2.9rem; animation-duration: 18s; animation-delay: -4s; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* keyframes for moving hearts (like floating balloons) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes floatAround {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: translate(0, 0) rotate(0deg) scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>25% { transform: translate(20px, -30px) rotate(5deg) scale(1.05); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: translate(-15px, -45px) rotate(-3deg) scale(0.98); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>75% { transform: translate(25px, -15px) rotate(4deg) scale(1.03); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: translate(-20px, -50px) rotate(-5deg) scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes softPulse {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: scale(1.1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes heartFloat {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: translateY(-10px); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* responsive adjustments */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 420px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.valentine-card { padding: 24px 12px 32px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.btn { font-size: 1.8rem; padding: 14px 20px; min-width: 110px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.question { font-size: 1.6rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>h1 { font-size: 1.9rem; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.button-panel { gap: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* make 'no' impossible to tap on small screen */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hide-no {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #d47b9a;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- floating heart-balloons (8 pieces) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;❤️‍🔥&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💖&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💘&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💕&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;❤️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💗&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="heart-balloon"&gt;💞&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- main card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="valentine-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;🥰&lt;/span&gt; Valentine &lt;span&gt;🌸&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>will you be my Valentine?</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- yes / no buttons --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="button-panel" id="buttonPanel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" id="yesBtn"&gt;YES 💝&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="btn" id="noBtn"&gt;NO 😢&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- hidden message shown after YES click --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="loveMessage" class="hidden-message"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>💖 I knew you would say YES! 💖&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-size: 1.2rem; display: block; margin-top: 12px;"&gt;Meet you today at 💌&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong style="font-size: 1.6rem;"&gt;Le Petit Amour Café&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span style="font-size: 1.2rem;"&gt;🕔 5:30 pm · under the heart arch&lt;/span&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;i&gt;💋&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer style="margin-top: 10px;"&gt;❤️ tap yes — i have a surprise ❤️&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>(function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// get elements</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const noBtn = document.getElementById('noBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const yesBtn = document.getElementById('yesBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const messageDiv = document.getElementById('loveMessage');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const panel = document.getElementById('buttonPanel');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let moveAttempts = 0;<span class="Apple-converted-space">  </span>// just for fun, no logic</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// ----- make NO button move away on touch/click (for mobile &amp; desktop) -----</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function moveNoButton(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Prevent default to avoid any double tap zoom or accidental click</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.stopPropagation();<span class="Apple-converted-space">  </span>// avoid triggering click if any</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// get panel dimensions and button dimensions</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const panelRect = panel.getBoundingClientRect();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btnRect = noBtn.getBoundingClientRect();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// button width including margin? we use offsetWidth</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btnWidth = noBtn.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btnHeight = noBtn.offsetHeight;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// max left offset within panel (with some margin)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const maxX = panelRect.width - btnWidth - 8;<span class="Apple-converted-space">  </span>// 8px safe margin</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const maxY = panelRect.height - btnHeight - 8;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Ensure we don't go outside the panel (button must remain inside button-panel)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// we use relative positioning inside panel (which is position relative)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// but the button is already relatively positioned? we add position relative to panel</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// and make button position absolute? Let's do quick adjustment.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// For easier moving, we set panel to relative and button to absolute.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Buttons are side by side – we'll adjust noBtn only.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// However yesBtn stays in flow, so we need to wrap or change.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Quick fix: make panel relative, and make both buttons absolute? That would overlap.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Better: Keep buttons inline, but we can move No using transform (translate) inside flow?</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Transform won't affect layout flow, so it can overlay yes or go out.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Let's adjust with position: relative on noBtn and use left, top.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Because panel is flex, using relative + left/top will shift from its original position but without breaking layout too much.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// We'll also set a higher z-index.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// generate random offsets within panel limits, but we want to escape the finger.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// We calculate shift relative to its original position.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// original position is (0,0) if we reset left/ top. We need to ensure it moves far enough.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// For simplicity, we'll compute new position inside panel using absolute coordinates?</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// But easier: move with absolute inside panel (which we set to relative).</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// We'll change button to position: absolute so we can freely move.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// But we need to keep yesBtn static and noBtn absolute inside same panel.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Set panel to relative, yesBtn stays static (but we need to give it some left margin).</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// This is getting complex. Let's do quick method: keep both inline, but on noBtn hover/touch we use transform: translate(x,y)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// and the button moves visually, but click area stays? Actually transform moves the hit area as well.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Perfect. We'll use transform translate. We also ensure it moves far enough away from touch point.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Get touch/click coordinates relative to panel to push opposite direction</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let clientX, clientY;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (e.touches) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>clientX = e.touches[0].clientX;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>clientY = e.touches[0].clientY;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>clientX = e.clientX;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>clientY = e.clientY;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// get button center</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btnCenterX = btnRect.left + btnWidth/2;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btnCenterY = btnRect.top + btnHeight/2;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// vector from touch to button center</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let deltaX = btnCenterX - clientX;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let deltaY = btnCenterY - clientY;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Normalize or just push strongly in same direction (if touch is near button)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const distance = Math.sqrt(deltaX*deltaX + deltaY*deltaY);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const strength = 200; // pixels to move away</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (distance &lt; 150) { // only if they try to tap nearby</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// move away: opposite direction from touch point relative to button</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// if touch is right of button, move button left (negative)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let moveX = 0, moveY = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// decide direction based on where the touch happened</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (Math.abs(deltaX) &gt; 20) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>moveX = deltaX &gt; 0 ? strength : -strength; // if touch left, move right</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>moveX = (Math.random() - 0.5) * strength; // random if uncertain</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (Math.abs(deltaY) &gt; 20) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>moveY = deltaY &gt; 0 ? strength : -strength;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>moveY = (Math.random() - 0.5) * strength;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// clamp movement so button stays roughly inside view (soft limit)</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const currentTransform = window.getComputedStyle(noBtn).transform;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let currentX = 0, currentY = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (currentTransform !== 'none') {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const values = currentTransform.split('(')[1].split(')')[0].split(',');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (values.length &gt;= 6) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>currentX = parseFloat(values[4]);</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>currentY = parseFloat(values[5]);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let newX = currentX + moveX;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>let newY = currentY + moveY;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// keep within 200px range from origin to avoid out of screen</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>newX = Math.min(180, Math.max(-180, newX));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>newY = Math.min(140, Math.max(-140, newY));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>noBtn.style.transform = `translate(${newX}px, ${newY}px)`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>noBtn.style.transition = 'transform 0.15s ease';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>moveAttempts++;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// if far, maybe reset to origin slowly? not needed</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Always cancel default to avoid zoom / scroll</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// attach both touch and mouse events</p>
+<p class="p1"><span class="Apple-converted-space">            </span>noBtn.addEventListener('touchstart', moveNoButton, { passive: false });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>noBtn.addEventListener('mousedown', moveNoButton);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// for mouse leave reset? but keep as is</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// also for 'click' on noBtn we want to prevent any default and still move</p>
+<p class="p1"><span class="Apple-converted-space">            </span>noBtn.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.stopPropagation();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// move again to be safe</p>
+<p class="p1"><span class="Apple-converted-space">                </span>moveNoButton(e);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// ----- YES button behaviour -----</p>
+<p class="p1"><span class="Apple-converted-space">            </span>yesBtn.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// show message</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageDiv.classList.add('show');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// optionally hide no button? but we can just let it be.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// But we want to make noBtn less prominent? we can fade it.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>noBtn.style.opacity = '0.3';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>noBtn.style.pointerEvents = 'none';<span class="Apple-converted-space">  </span>// disable no after yes</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yesBtn.style.transform = 'scale(1.1)';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yesBtn.style.backgroundColor = '#ffd9e6';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// also maybe stop moving</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// add some extra hearts? already floating.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// and disable further yes clicks? not necessary</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yesBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yesBtn.style.opacity = '0.9';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// reset no button's transform on window resize to avoid weird positions</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.addEventListener('resize', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>noBtn.style.transform = 'translate(0, 0)';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// optional: touchstart on yes to give haptic (but not needed)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// also disable context menu on buttons</p>
+<p class="p1"><span class="Apple-converted-space">            </span>noBtn.addEventListener('contextmenu', (e) =&gt; e.preventDefault());</p>
+<p class="p1"><span class="Apple-converted-space">            </span>yesBtn.addEventListener('contextmenu', (e) =&gt; e.preventDefault());</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Preload message hidden initially (default ok)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Also make sure noBtn can't be easily tapped: move also on touch move</p>
+<p class="p1"><span class="Apple-converted-space">            </span>noBtn.addEventListener('touchmove', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>moveNoButton(e);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, { passive: false });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// For mobile, we also want to move if they drag toward button</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.addEventListener('touchmove', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// optional: fine</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, { passive: false });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// one extra: reset no double tap zoom</p>
+<p class="p1"><span class="Apple-converted-space">        </span>})();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
