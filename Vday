@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Will you be my Valentine? 💖</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #ffdde1 0%, #f9c9e2 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 16px;
+            touch-action: manipulation; /* improves tapping on mobile */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* main card */
+        .valentine-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 40px rgba(220, 20, 60, 0.15),
+                        0 0 0 2px rgba(255, 255, 255, 0.5) inset;
+            width: 100%;
+            max-width: 380px;
+            padding: 32px 20px 40px 20px;
+            text-align: center;
+            z-index: 10;
+            border: 1px solid rgba(255,255,240,0.7);
+            transition: all 0.2s ease;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #b63e5e;
+            text-shadow: 0 3px 6px #ffe2ec;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        h1 span {
+            font-size: 2.4rem;
+            display: inline-block;
+            animation: softPulse 2s infinite;
+        }
+
+        /* question */
+        .question {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #a1224b;
+            background: rgba(255,255,255,0.4);
+            border-radius: 60px;
+            padding: 14px 10px;
+            margin: 20px 0 28px 0;
+            backdrop-filter: blur(4px);
+            border: 1px solid #ffb6c190;
+            box-shadow: 0 8px 0 #d46b8d30;
+        }
+
+        /* yes / no button container */
+        .button-panel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            margin: 10px 0 15px 0;
+            position: relative;
+            min-height: 90px;
+        }
+
+        .btn {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 60px;
+            background: white;
+            box-shadow: 0 15px 0 #c05a7b, 0 8px 20px #f598b2;
+            color: #c12858;
+            letter-spacing: 1px;
+            transition: all 0.1s ease;
+            cursor: pointer;
+            touch-action: none;   /* helps avoid accidental page drag */
+            user-select: none;
+            border: 2px solid #ffeef4;
+            min-width: 130px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 8px 0 #b04468, 0 10px 20px #f28baa;
+        }
+
+        /* moving "no" button extra style */
+        #noBtn {
+            background: #f9e2ec;
+            color: #9f3e5c;
+            box-shadow: 0 12px 0 #b45b7a, 0 8px 20px #d987a3;
+            position: relative;
+            transition: left 0.08s ease, top 0.08s ease, right 0.08s ease, transform 0.2s;
+            will-change: left, top;
+            z-index: 25;
+            touch-action: none;
+        }
+
+        /* message after yes */
+        .hidden-message {
+            margin-top: 35px;
+            padding: 16px 12px;
+            background: rgba(255, 220, 240, 0.8);
+            backdrop-filter: blur(5px);
+            border-radius: 40px;
+            font-size: 1.4rem;
+            color: #aa2350;
+            border: 2px dashed #ff9eb5;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+            line-height: 1.4;
+            box-shadow: 0 10px 20px #ffb0c3;
+            word-break: break-word;
+        }
+
+        .hidden-message.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hidden-message i {
+            font-size: 2rem;
+            display: inline-block;
+            animation: heartFloat 1.5s infinite;
+        }
+
+        /* balloon hearts moving around */
+        .heart-balloon {
+            position: fixed;
+            font-size: 2.2rem;
+            opacity: 0.7;
+            filter: drop-shadow(0 8px 12px #eea5b6);
+            z-index: 5;
+            pointer-events: none;  /* so clicks pass through to buttons */
+            animation: floatAround 14s infinite alternate ease-in-out;
+            will-change: transform, left, top;
+        }
+
+        /* different delays and sizes */
+        .heart-balloon:nth-child(1) { top: 5%; left: 3%; font-size: 2.8rem; animation-duration: 16s; animation-delay: -2s; }
+        .heart-balloon:nth-child(2) { top: 15%; right: 2%; font-size: 3.5rem; animation-duration: 19s; animation-delay: -5s; }
+        .heart-balloon:nth-child(3) { bottom: 12%; left: 8%; font-size: 2.4rem; animation-duration: 13s; animation-delay: -1s; }
+        .heart-balloon:nth-child(4) { top: 25%; left: 20%; font-size: 4rem; animation-duration: 22s; animation-delay: -11s; }
+        .heart-balloon:nth-child(5) { bottom: 25%; right: 10%; font-size: 3rem; animation-duration: 17s; animation-delay: -7s; }
+        .heart-balloon:nth-child(6) { top: 70%; left: 15%; font-size: 2.2rem; animation-duration: 20s; animation-delay: -3s; }
+        .heart-balloon:nth-child(7) { bottom: 40%; right: 5%; font-size: 3.8rem; animation-duration: 15s; animation-delay: -9s; }
+        .heart-balloon:nth-child(8) { top: 85%; left: 70%; font-size: 2.9rem; animation-duration: 18s; animation-delay: -4s; }
+
+        /* keyframes for moving hearts (like floating balloons) */
+        @keyframes floatAround {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(20px, -30px) rotate(5deg) scale(1.05); }
+            50% { transform: translate(-15px, -45px) rotate(-3deg) scale(0.98); }
+            75% { transform: translate(25px, -15px) rotate(4deg) scale(1.03); }
+            100% { transform: translate(-20px, -50px) rotate(-5deg) scale(1); }
+        }
+
+        @keyframes softPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 420px) {
+            .valentine-card { padding: 24px 12px 32px; }
+            .btn { font-size: 1.8rem; padding: 14px 20px; min-width: 110px; }
+            .question { font-size: 1.6rem; }
+            h1 { font-size: 1.9rem; }
+            .button-panel { gap: 16px; }
+        }
+
+        /* make 'no' impossible to tap on small screen */
+        .hide-no {
+            opacity: 0.8;
+        }
+        footer {
+            font-size: 0.8rem;
+            margin-top: 10px;
+            color: #d47b9a;
+        }
+    </style>
+</head>
+<body>
+    <!-- floating heart-balloons (8 pieces) -->
+    <div class="heart-balloon">❤️‍🔥</div>
+    <div class="heart-balloon">💖</div>
+    <div class="heart-balloon">💘</div>
+    <div class="heart-balloon">💕</div>
+    <div class="heart-balloon">❤️</div>
+    <div class="heart-balloon">💓</div>
+    <div class="heart-balloon">💗</div>
+    <div class="heart-balloon">💞</div>
+
+    <!-- main card -->
+    <div class="valentine-card">
+        <h1>
+            <span>🥰</span> Valentine <span>🌸</span>
+        </h1>
+        <div class="question">
+            will you be my Valentine?
+        </div>
+
+        <!-- yes / no buttons -->
+        <div class="button-panel" id="buttonPanel">
+            <button class="btn" id="yesBtn">YES 💝</button>
+            <button class="btn" id="noBtn">NO 😢</button>
+        </div>
+
+        <!-- hidden message shown after YES click -->
+        <div id="loveMessage" class="hidden-message">
+            💖 I knew you would say YES! 💖<br>
+            <span style="font-size: 1.2rem; display: block; margin-top: 12px;">Meet you today at 💌</span>
+            <strong style="font-size: 1.6rem;">Le Petit Amour Café</strong><br>
+            <span style="font-size: 1.2rem;">🕔 5:30 pm · under the heart arch</span><br>
+            <i>💋</i>
+        </div>
+        <footer style="margin-top: 10px;">❤️ tap yes — i have a surprise ❤️</footer>
+    </div>
+
+    <script>
+        (function() {
+            // get elements
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+            const messageDiv = document.getElementById('loveMessage');
+            const panel = document.getElementById('buttonPanel');
+
+            let moveAttempts = 0;  // just for fun, no logic
+
+            // ----- make NO button move away on touch/click (for mobile & desktop) -----
+            function moveNoButton(e) {
+                // Prevent default to avoid any double tap zoom or accidental click
+                e.preventDefault();
+                e.stopPropagation();  // avoid triggering click if any
+
+                // get panel dimensions and button dimensions
+                const panelRect = panel.getBoundingClientRect();
+                const btnRect = noBtn.getBoundingClientRect();
+
+                // button width including margin? we use offsetWidth
+                const btnWidth = noBtn.offsetWidth;
+                const btnHeight = noBtn.offsetHeight;
+
+                // max left offset within panel (with some margin)
+                const maxX = panelRect.width - btnWidth - 8;  // 8px safe margin
+                const maxY = panelRect.height - btnHeight - 8;
+
+                // Ensure we don't go outside the panel (button must remain inside button-panel)
+                // we use relative positioning inside panel (which is position relative)
+                // but the button is already relatively positioned? we add position relative to panel
+                // and make button position absolute? Let's do quick adjustment.
+                // For easier moving, we set panel to relative and button to absolute.
+                // Buttons are side by side – we'll adjust noBtn only.
+                // However yesBtn stays in flow, so we need to wrap or change.
+                // Quick fix: make panel relative, and make both buttons absolute? That would overlap.
+                // Better: Keep buttons inline, but we can move No using transform (translate) inside flow?
+                // Transform won't affect layout flow, so it can overlay yes or go out.
+                // Let's adjust with position: relative on noBtn and use left, top.
+                // Because panel is flex, using relative + left/top will shift from its original position but without breaking layout too much.
+                // We'll also set a higher z-index.
+
+                // generate random offsets within panel limits, but we want to escape the finger.
+                // We calculate shift relative to its original position.
+                // original position is (0,0) if we reset left/ top. We need to ensure it moves far enough.
+                // For simplicity, we'll compute new position inside panel using absolute coordinates?
+                // But easier: move with absolute inside panel (which we set to relative).
+                // We'll change button to position: absolute so we can freely move.
+                // But we need to keep yesBtn static and noBtn absolute inside same panel.
+                // Set panel to relative, yesBtn stays static (but we need to give it some left margin).
+                // This is getting complex. Let's do quick method: keep both inline, but on noBtn hover/touch we use transform: translate(x,y)
+                // and the button moves visually, but click area stays? Actually transform moves the hit area as well.
+                // Perfect. We'll use transform translate. We also ensure it moves far enough away from touch point.
+
+                // Get touch/click coordinates relative to panel to push opposite direction
+                let clientX, clientY;
+                if (e.touches) {
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                } else {
+                    clientX = e.clientX;
+                    clientY = e.clientY;
+                }
+
+                // get button center
+                const btnCenterX = btnRect.left + btnWidth/2;
+                const btnCenterY = btnRect.top + btnHeight/2;
+
+                // vector from touch to button center
+                let deltaX = btnCenterX - clientX;
+                let deltaY = btnCenterY - clientY;
+
+                // Normalize or just push strongly in same direction (if touch is near button)
+                const distance = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+                const strength = 200; // pixels to move away
+
+                if (distance < 150) { // only if they try to tap nearby
+                    // move away: opposite direction from touch point relative to button
+                    // if touch is right of button, move button left (negative)
+                    let moveX = 0, moveY = 0;
+
+                    // decide direction based on where the touch happened
+                    if (Math.abs(deltaX) > 20) {
+                        moveX = deltaX > 0 ? strength : -strength; // if touch left, move right
+                    } else {
+                        moveX = (Math.random() - 0.5) * strength; // random if uncertain
+                    }
+
+                    if (Math.abs(deltaY) > 20) {
+                        moveY = deltaY > 0 ? strength : -strength;
+                    } else {
+                        moveY = (Math.random() - 0.5) * strength;
+                    }
+
+                    // clamp movement so button stays roughly inside view (soft limit)
+                    const currentTransform = window.getComputedStyle(noBtn).transform;
+                    let currentX = 0, currentY = 0;
+                    if (currentTransform !== 'none') {
+                        const values = currentTransform.split('(')[1].split(')')[0].split(',');
+                        if (values.length >= 6) {
+                            currentX = parseFloat(values[4]);
+                            currentY = parseFloat(values[5]);
+                        }
+                    }
+
+                    let newX = currentX + moveX;
+                    let newY = currentY + moveY;
+
+                    // keep within 200px range from origin to avoid out of screen
+                    newX = Math.min(180, Math.max(-180, newX));
+                    newY = Math.min(140, Math.max(-140, newY));
+
+                    noBtn.style.transform = `translate(${newX}px, ${newY}px)`;
+                    noBtn.style.transition = 'transform 0.15s ease';
+                    moveAttempts++;
+                } else {
+                    // if far, maybe reset to origin slowly? not needed
+                }
+
+                // Always cancel default to avoid zoom / scroll
+                return false;
+            }
+
+            // attach both touch and mouse events
+            noBtn.addEventListener('touchstart', moveNoButton, { passive: false });
+            noBtn.addEventListener('mousedown', moveNoButton);
+            // for mouse leave reset? but keep as is
+
+            // also for 'click' on noBtn we want to prevent any default and still move
+            noBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                // move again to be safe
+                moveNoButton(e);
+                return false;
+            });
+
+            // ----- YES button behaviour -----
+            yesBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // show message
+                messageDiv.classList.add('show');
+
+                // optionally hide no button? but we can just let it be.
+                // But we want to make noBtn less prominent? we can fade it.
+                noBtn.style.opacity = '0.3';
+                noBtn.style.pointerEvents = 'none';  // disable no after yes
+                yesBtn.style.transform = 'scale(1.1)';
+                yesBtn.style.backgroundColor = '#ffd9e6';
+
+                // also maybe stop moving
+                // add some extra hearts? already floating.
+                // and disable further yes clicks? not necessary
+                yesBtn.disabled = true;
+                yesBtn.style.opacity = '0.9';
+            });
+
+            // reset no button's transform on window resize to avoid weird positions
+            window.addEventListener('resize', () => {
+                noBtn.style.transform = 'translate(0, 0)';
+            });
+
+            // optional: touchstart on yes to give haptic (but not needed)
+            // also disable context menu on buttons
+            noBtn.addEventListener('contextmenu', (e) => e.preventDefault());
+            yesBtn.addEventListener('contextmenu', (e) => e.preventDefault());
+
+            // Preload message hidden initially (default ok)
+            // Also make sure noBtn can't be easily tapped: move also on touch move
+            noBtn.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                moveNoButton(e);
+            }, { passive: false });
+
+            // For mobile, we also want to move if they drag toward button
+            document.addEventListener('touchmove', (e) => {
+                // optional: fine
+            }, { passive: false });
+
+            // one extra: reset no double tap zoom
+        })();
+    </script>
+</body>
+</html>
